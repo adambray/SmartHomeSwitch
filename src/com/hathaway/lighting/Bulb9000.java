@@ -1,6 +1,8 @@
 package com.hathaway.lighting;
 
-public class Bulb9000 {
+import io.amazing.iot.Bulb;
+
+public class Bulb9000 implements Bulb {
     public void turnOn() {
         // (native code)
     }

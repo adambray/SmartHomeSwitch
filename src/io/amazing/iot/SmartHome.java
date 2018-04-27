@@ -1,26 +1,19 @@
 package io.amazing.iot;
 
-import com.hathaway.lighting.Bulb9000;
-import com.lockheed.automation.Switch9000;
-
 public class SmartHome {
-    private Bulb9000 bulb;
-    private Switch9000 mySwitch;
+    private final Switch mySwitch;
+    private final Bulb bulb;
 
-    public static void main(String args) {
-        new SmartHome().run();
+    public SmartHome(Switch mySwitch, Bulb bulb) {
+        this.mySwitch = mySwitch;
+        this.bulb = bulb;
     }
 
     void run() {
-        bulb = new Bulb9000();
-        mySwitch = new Switch9000();
-
-        while (true) {
-            if (mySwitch.isOn()) {
-                bulb.turnOn();
-            } else {
-                bulb.turnOff();
-            }
+        if (mySwitch.isOn()) {
+            bulb.turnOn();
+        } else {
+            bulb.turnOff();
         }
     }
 }
